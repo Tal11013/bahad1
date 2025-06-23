@@ -111,18 +111,18 @@ export const ImprovementCard: React.FC<ImprovementCardProps> = ({
           
           {improvement.type === 'improvement' ? (
             <div className="space-y-3">
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-end gap-3">
+                <span className="text-sm font-medium text-gray-700">ניסיתי היום</span>
                 <button
                   onClick={() => updateData({ attempted: !dailyData.attempted })}
-                  className={`w-7 h-7 rounded-full border-3 flex items-center justify-center transition-colors ${
+                  className={`w-10 h-10 rounded-full border-3 flex items-center justify-center transition-all duration-200 transform hover:scale-105 ${
                     dailyData.attempted
-                      ? 'bg-green-500 border-green-500'
-                      : 'border-gray-400 hover:border-green-400'
+                      ? 'bg-green-500 border-green-500 shadow-lg shadow-green-200'
+                      : 'border-gray-400 hover:border-green-400 bg-white hover:bg-green-50'
                   }`}
                 >
-                  {dailyData.attempted && <Check className="w-4 h-4 text-white font-bold" />}
+                  {dailyData.attempted && <Check className="w-6 h-6 text-white font-bold" />}
                 </button>
-                <span className="text-sm font-medium text-gray-700 mr-2">ניסיתי היום</span>
               </div>
 
               <div>
